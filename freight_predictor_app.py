@@ -31,7 +31,7 @@ model = Pipeline(steps=[
 model.fit(X, y)
 
 # Streamlit UI
-st.title("🚚 Smart Freight Rate Predictor")
+st.title("🚚 Smart Freight Rate Predictor - By Hong Ling")
 
 st.sidebar.header("Input Freight Details")
 
@@ -61,4 +61,5 @@ st.subheader("Predicted Freight Rate (USD)")
 st.success(f"${predicted_rate:,.2f}")
 
 st.subheader("Input Details")
+
 st.write(input_df)
