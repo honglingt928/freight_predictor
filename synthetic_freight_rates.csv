@@ -1,0 +1,201 @@
+Origin,Destination,Mode,Distance_miles,Season,Fuel_Index,Carrier_Tier,Rate_USD
+Los Angeles,New York,Ocean,2200,Q2,1.09,Tier 1,1258.95
+New York,Hamburg,Air,2956,Q3,1.14,Tier 3,6672.28
+Rotterdam,Los Angeles,Ocean,1868,Q3,1.03,Tier 2,1164.04
+New York,Los Angeles,Ocean,6189,Q3,1.16,Tier 2,4343.44
+New York,Tokyo,Ocean,7114,Q4,1.25,Tier 1,5113.19
+Singapore,Hamburg,Ocean,1660,Q1,1.11,Tier 2,1013.43
+Rotterdam,Singapore,Air,7390,Q3,1.07,Tier 1,13047.05
+Rotterdam,Hamburg,Air,7340,Q1,1.02,Tier 2,12353.22
+Rotterdam,Tokyo,Ocean,3836,Q4,1.09,Tier 2,2644.63
+New York,Tokyo,Ocean,2924,Q2,0.98,Tier 1,1504.4
+Los Angeles,Hamburg,Ocean,5009,Q3,1.0,Tier 1,2754.95
+Rotterdam,Tokyo,Ocean,7825,Q1,1.07,Tier 1,4186.38
+New York,Hamburg,Ocean,4378,Q1,0.83,Tier 2,1998.56
+Singapore,New York,Ocean,5464,Q3,0.91,Tier 2,3008.21
+Los Angeles,Hamburg,Ocean,7452,Q2,1.07,Tier 3,5023.39
+Singapore,Hamburg,Ocean,7445,Q2,1.02,Tier 1,3986.8
+Los Angeles,Tokyo,Ocean,6800,Q2,0.97,Tier 2,3809.19
+New York,Tokyo,Ocean,6197,Q4,1.17,Tier 2,4585.93
+Shanghai,Los Angeles,Ocean,2248,Q1,1.15,Tier 1,1292.6
+Los Angeles,Los Angeles,Ocean,4346,Q1,0.88,Tier 3,2294.69
+Singapore,New York,Ocean,4980,Q1,1.24,Tier 1,3087.6
+New York,Los Angeles,Air,916,Q4,1.05,Tier 3,1990.93
+Los Angeles,Hamburg,Ocean,5765,Q1,1.17,Tier 2,3709.78
+Shanghai,Tokyo,Ocean,4744,Q4,1.09,Tier 3,3567.96
+Shanghai,Los Angeles,Ocean,5176,Q2,1.3,Tier 2,3885.88
+Rotterdam,Los Angeles,Ocean,4783,Q3,1.18,Tier 1,3104.17
+Rotterdam,New York,Ocean,2023,Q1,1.15,Tier 1,1163.22
+Singapore,New York,Ocean,2281,Q1,1.19,Tier 1,1357.19
+Los Angeles,Hamburg,Truck,3619,Q2,0.87,Tier 3,2380.29
+Los Angeles,Tokyo,Ocean,6438,Q3,0.9,Tier 2,3505.49
+Rotterdam,New York,Ocean,7439,Q4,1.16,Tier 1,4961.81
+Los Angeles,Los Angeles,Ocean,1774,Q3,1.05,Tier 1,1024.49
+Los Angeles,Tokyo,Ocean,6497,Q2,1.18,Tier 2,4427.38
+Shanghai,Tokyo,Ocean,449,Q2,0.85,Tier 1,200.37
+Rotterdam,Los Angeles,Truck,873,Q3,1.07,Tier 2,678.16
+New York,New York,Ocean,4733,Q4,0.99,Tier 2,2963.69
+Rotterdam,Los Angeles,Truck,2365,Q4,1.03,Tier 2,1848.89
+New York,Tokyo,Truck,970,Q1,1.1,Tier 2,704.22
+Shanghai,Singapore,Ocean,4162,Q4,1.05,Tier 2,2764.09
+Singapore,Singapore,Ocean,7673,Q3,1.07,Tier 3,5418.67
+Los Angeles,Hamburg,Ocean,4563,Q2,1.04,Tier 1,2491.4
+Shanghai,Los Angeles,Ocean,2184,Q1,1.0,Tier 3,1310.4
+Los Angeles,Los Angeles,Ocean,1277,Q1,1.19,Tier 1,759.81
+Singapore,Hamburg,Ocean,435,Q2,0.81,Tier 3,221.98
+Singapore,Hamburg,Ocean,588,Q4,1.1,Tier 2,409.1
+Shanghai,Hamburg,Ocean,3237,Q2,1.08,Tier 1,1835.38
+Singapore,Tokyo,Air,5058,Q4,1.16,Tier 1,10121.06
+New York,Los Angeles,Ocean,2048,Q2,1.1,Tier 3,1419.26
+Singapore,Tokyo,Air,6744,Q3,1.21,Tier 3,16157.28
+Los Angeles,Hamburg,Ocean,4919,Q4,1.28,Tier 1,3620.38
+Los Angeles,Los Angeles,Ocean,3014,Q3,0.97,Tier 3,1929.56
+Los Angeles,Tokyo,Ocean,3574,Q1,0.91,Tier 3,1951.4
+Los Angeles,Tokyo,Ocean,7262,Q2,1.01,Tier 3,4620.81
+New York,Hamburg,Air,3478,Q1,0.94,Tier 2,5394.38
+Rotterdam,Los Angeles,Air,1452,Q1,1.11,Tier 2,2659.34
+Shanghai,Hamburg,Air,7196,Q1,1.26,Tier 3,16320.53
+Los Angeles,Los Angeles,Ocean,4181,Q1,0.87,Tier 3,2182.48
+Singapore,Singapore,Ocean,4873,Q2,0.85,Tier 2,2392.03
+Los Angeles,New York,Air,2322,Q1,0.93,Tier 2,3563.11
+Singapore,New York,Air,4730,Q2,1.16,Tier 1,8641.71
+Singapore,New York,Truck,2350,Q2,1.1,Tier 1,1628.55
+Los Angeles,Hamburg,Ocean,7789,Q3,0.85,Tier 2,4005.49
+New York,Singapore,Ocean,5059,Q4,1.26,Tier 3,4398.29
+Singapore,Los Angeles,Air,7081,Q4,1.2,Tier 3,17589.2
+Singapore,Tokyo,Ocean,7149,Q2,0.81,Tier 3,3648.13
+Los Angeles,Los Angeles,Truck,1529,Q3,1.13,Tier 3,1368.39
+Singapore,Tokyo,Air,6441,Q2,1.19,Tier 1,12072.04
+Singapore,Los Angeles,Ocean,7141,Q2,0.99,Tier 2,4082.69
+Los Angeles,Singapore,Air,1558,Q2,0.83,Tier 3,2444.03
+Los Angeles,Tokyo,Air,7202,Q3,0.84,Tier 1,9981.97
+Shanghai,Hamburg,Ocean,2682,Q4,0.85,Tier 3,1572.99
+New York,Los Angeles,Truck,4742,Q3,1.22,Tier 2,4200.08
+New York,Los Angeles,Ocean,2217,Q1,1.26,Tier 1,1396.71
+Singapore,Tokyo,Air,1531,Q3,0.86,Tier 2,2389.74
+New York,Hamburg,Ocean,4544,Q3,0.92,Tier 2,2529.19
+Singapore,Hamburg,Air,4461,Q3,0.88,Tier 1,6477.37
+Shanghai,Singapore,Ocean,7848,Q3,0.89,Tier 1,3841.6
+Los Angeles,Hamburg,Ocean,7327,Q4,1.22,Tier 1,5139.89
+Los Angeles,Hamburg,Truck,1558,Q1,0.97,Tier 1,906.76
+Los Angeles,Hamburg,Ocean,5315,Q4,0.96,Tier 1,2933.88
+New York,New York,Ocean,4837,Q4,0.91,Tier 1,2530.96
+Shanghai,Singapore,Truck,5054,Q3,1.1,Tier 1,3669.2
+New York,Los Angeles,Truck,3377,Q2,0.99,Tier 3,2527.48
+New York,Tokyo,Ocean,7930,Q2,1.17,Tier 2,5358.1
+Shanghai,Los Angeles,Ocean,2328,Q4,0.9,Tier 1,1204.74
+Shanghai,Singapore,Ocean,2380,Q4,1.19,Tier 3,1954.22
+Shanghai,Tokyo,Ocean,5092,Q3,1.1,Tier 3,3696.79
+Shanghai,Singapore,Ocean,7243,Q4,0.86,Tier 3,4298.0
+Los Angeles,Hamburg,Ocean,337,Q3,1.01,Tier 2,205.92
+Rotterdam,Tokyo,Air,6527,Q2,1.23,Tier 1,12644.43
+Rotterdam,Hamburg,Air,3672,Q2,1.26,Tier 3,8744.5
+Shanghai,Los Angeles,Air,5649,Q1,1.03,Tier 2,9600.48
+Rotterdam,Los Angeles,Ocean,3032,Q2,1.04,Tier 2,1821.02
+Rotterdam,Tokyo,Ocean,3779,Q4,1.26,Tier 2,3011.67
+Shanghai,Tokyo,Ocean,6171,Q2,1.09,Tier 3,4237.63
+Rotterdam,Singapore,Ocean,3231,Q3,0.82,Tier 1,1457.18
+New York,Singapore,Ocean,4364,Q2,1.26,Tier 3,3464.14
+Singapore,Hamburg,Air,2793,Q1,0.92,Tier 3,4625.21
+Singapore,Tokyo,Ocean,6396,Q2,1.09,Tier 1,3660.11
+Shanghai,Los Angeles,Ocean,5769,Q3,0.88,Tier 1,2792.2
+Los Angeles,Singapore,Ocean,4500,Q3,0.82,Tier 1,2029.5
+Shanghai,Singapore,Air,6469,Q4,0.96,Tier 2,11783.93
+Los Angeles,Los Angeles,Ocean,4018,Q2,1.19,Tier 1,2510.25
+Singapore,Singapore,Ocean,4338,Q3,0.94,Tier 3,2691.3
+Shanghai,Hamburg,Ocean,4023,Q1,0.91,Tier 1,1830.47
+New York,Tokyo,Air,4242,Q4,0.91,Tier 3,7990.66
+Rotterdam,Los Angeles,Ocean,2106,Q1,1.06,Tier 2,1227.8
+Los Angeles,Tokyo,Air,6454,Q2,1.29,Tier 3,15735.5
+Rotterdam,Singapore,Air,960,Q2,1.03,Tier 3,1868.83
+Rotterdam,Singapore,Ocean,7550,Q2,1.08,Tier 1,4280.85
+Shanghai,Los Angeles,Ocean,7191,Q4,1.23,Tier 1,5085.83
+Rotterdam,Hamburg,Truck,6438,Q3,1.07,Tier 3,5455.82
+New York,New York,Ocean,6290,Q4,0.89,Tier 1,3218.91
+Rotterdam,Los Angeles,Ocean,3645,Q1,0.95,Tier 2,1904.51
+Shanghai,New York,Air,6231,Q4,0.95,Tier 2,11232.16
+New York,New York,Truck,7887,Q1,1.0,Tier 1,4732.2
+Singapore,Hamburg,Truck,1099,Q4,1.01,Tier 2,842.48
+Rotterdam,New York,Air,4655,Q3,1.2,Tier 1,9216.9
+Shanghai,New York,Ocean,3147,Q1,0.97,Tier 3,1831.55
+Singapore,Hamburg,Ocean,1919,Q2,1.03,Tier 3,1245.24
+Singapore,New York,Air,480,Q2,1.11,Tier 2,923.08
+Los Angeles,New York,Ocean,3466,Q4,0.99,Tier 1,1973.02
+New York,New York,Ocean,2087,Q2,1.22,Tier 1,1336.72
+Rotterdam,Los Angeles,Truck,3466,Q1,1.09,Tier 2,2493.44
+Shanghai,Los Angeles,Ocean,866,Q2,0.95,Tier 3,518.3
+Los Angeles,Los Angeles,Ocean,4388,Q3,1.16,Tier 2,3079.5
+New York,Hamburg,Ocean,871,Q3,1.06,Tier 3,609.35
+Los Angeles,Singapore,Ocean,2169,Q4,1.07,Tier 1,1334.48
+New York,New York,Ocean,4356,Q1,1.04,Tier 3,2718.14
+New York,New York,Ocean,6977,Q3,1.05,Tier 2,4432.14
+Rotterdam,Hamburg,Ocean,3322,Q3,1.18,Tier 1,2155.98
+New York,New York,Ocean,7770,Q1,0.85,Tier 2,3632.47
+Los Angeles,Los Angeles,Air,5324,Q2,0.97,Tier 2,8947.12
+New York,Singapore,Ocean,5785,Q2,0.84,Tier 3,3061.42
+Rotterdam,Tokyo,Truck,4899,Q4,1.18,Tier 2,4387.64
+Rotterdam,New York,Ocean,4977,Q2,0.94,Tier 3,2947.38
+Los Angeles,Los Angeles,Ocean,4100,Q1,1.25,Tier 1,2562.5
+Singapore,Tokyo,Air,6877,Q3,1.06,Tier 3,14433.45
+Singapore,Singapore,Ocean,5724,Q2,1.2,Tier 1,3606.12
+New York,Tokyo,Truck,7181,Q4,1.29,Tier 3,7670.17
+Shanghai,Los Angeles,Ocean,7880,Q2,1.22,Tier 2,5551.85
+New York,Tokyo,Truck,6988,Q1,1.23,Tier 3,6188.57
+Los Angeles,Hamburg,Ocean,6576,Q4,1.0,Tier 3,4537.44
+Los Angeles,Tokyo,Air,723,Q2,1.08,Tier 1,1229.82
+Los Angeles,New York,Ocean,2593,Q4,0.93,Tier 2,1525.27
+Los Angeles,New York,Truck,3317,Q1,0.9,Tier 3,2149.42
+Los Angeles,Hamburg,Ocean,2793,Q3,1.05,Tier 2,1774.25
+Rotterdam,Los Angeles,Ocean,2168,Q1,1.1,Tier 3,1430.88
+Singapore,New York,Truck,5397,Q1,0.97,Tier 3,3769.26
+Los Angeles,Singapore,Ocean,1953,Q1,1.08,Tier 2,1160.08
+Shanghai,New York,Ocean,6132,Q1,1.24,Tier 3,4562.21
+Shanghai,New York,Ocean,7440,Q3,1.08,Tier 2,4861.3
+Shanghai,Los Angeles,Ocean,7137,Q3,1.16,Tier 3,5464.09
+Shanghai,Tokyo,Ocean,2496,Q4,1.2,Tier 1,1722.24
+Rotterdam,New York,Ocean,6390,Q2,1.29,Tier 2,4760.39
+Shanghai,Hamburg,Truck,5440,Q3,1.1,Tier 3,4739.33
+Los Angeles,Tokyo,Ocean,2461,Q3,1.2,Tier 3,1949.11
+New York,Singapore,Ocean,2486,Q2,1.28,Tier 1,1670.59
+Shanghai,Los Angeles,Truck,5375,Q3,1.27,Tier 2,4955.86
+Rotterdam,Singapore,Air,6693,Q1,0.87,Tier 3,10481.24
+Rotterdam,Tokyo,Ocean,4402,Q1,1.0,Tier 1,2201.0
+Shanghai,Tokyo,Ocean,3078,Q2,0.96,Tier 3,1861.57
+New York,Tokyo,Ocean,4343,Q4,0.84,Tier 2,2307.44
+Shanghai,Singapore,Ocean,3844,Q4,1.12,Tier 3,2970.64
+Rotterdam,Tokyo,Ocean,4632,Q2,1.17,Tier 3,3414.25
+Singapore,Singapore,Ocean,5345,Q2,1.22,Tier 3,4108.17
+Los Angeles,Tokyo,Ocean,7147,Q1,0.86,Tier 3,3687.85
+Rotterdam,Hamburg,Ocean,5576,Q4,1.24,Tier 1,3975.69
+Shanghai,Tokyo,Truck,2255,Q3,1.12,Tier 1,1666.9
+Los Angeles,Singapore,Truck,4920,Q1,1.15,Tier 2,3734.28
+Shanghai,New York,Ocean,6186,Q2,1.26,Tier 1,4092.04
+Shanghai,Tokyo,Ocean,1476,Q4,1.11,Tier 1,942.06
+Singapore,New York,Ocean,6011,Q3,0.97,Tier 2,3527.56
+Los Angeles,Hamburg,Air,2966,Q3,1.21,Tier 1,5921.62
+Los Angeles,Los Angeles,Ocean,502,Q1,0.98,Tier 1,245.98
+Singapore,Hamburg,Ocean,838,Q4,0.82,Tier 2,434.63
+Rotterdam,Tokyo,Truck,255,Q4,1.22,Tier 2,236.12
+Shanghai,New York,Air,5021,Q2,0.97,Tier 2,8437.92
+New York,New York,Truck,725,Q4,1.19,Tier 3,714.36
+Shanghai,Singapore,Air,4769,Q4,0.98,Tier 3,9674.39
+Shanghai,New York,Ocean,4323,Q1,1.23,Tier 2,2924.51
+Rotterdam,Singapore,Ocean,2325,Q4,0.91,Tier 2,1338.21
+Shanghai,Los Angeles,Truck,3487,Q3,1.29,Tier 2,3265.71
+Singapore,Tokyo,Air,7753,Q1,1.19,Tier 3,16606.93
+Singapore,Singapore,Ocean,564,Q1,0.86,Tier 3,291.02
+Los Angeles,Los Angeles,Ocean,7009,Q2,1.08,Tier 1,3974.1
+New York,New York,Ocean,4821,Q4,1.29,Tier 1,3575.98
+Shanghai,New York,Air,7042,Q2,1.04,Tier 2,12688.28
+Shanghai,Los Angeles,Truck,5631,Q3,0.89,Tier 3,3969.18
+Rotterdam,New York,Ocean,5178,Q1,1.04,Tier 3,3231.07
+Singapore,Los Angeles,Ocean,5326,Q1,1.06,Tier 3,3387.34
+New York,Singapore,Ocean,5322,Q1,1.17,Tier 2,3424.71
+Los Angeles,Singapore,Truck,1846,Q3,1.15,Tier 1,1401.11
+Singapore,Los Angeles,Air,1118,Q3,1.0,Tier 2,2029.17
+Los Angeles,Singapore,Air,2997,Q2,0.91,Tier 1,4295.45
+Rotterdam,Singapore,Ocean,6706,Q2,1.12,Tier 1,3943.13
+Rotterdam,Singapore,Ocean,6070,Q2,1.01,Tier 2,3540.48
+Shanghai,Hamburg,Ocean,1731,Q4,0.87,Tier 1,865.93
+New York,Tokyo,Ocean,3545,Q1,1.25,Tier 1,2215.62
+Los Angeles,New York,Air,7873,Q1,1.15,Tier 3,16297.11
