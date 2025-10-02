@@ -53,7 +53,7 @@ def train_model(X, y):
 model = train_model(X, y)
 
 # -------- Streamlit UI --------
-st.title("🚚 Smart Freight Rate Predictor")
+st.title("🚚 Smart Freight Rate Predictor - Hong Ling")
 st.markdown("Predict freight rates based on shipment details.")
 
 # -------- Sidebar inputs --------
@@ -94,5 +94,6 @@ with st.expander("View Dataset"):
 
 st.markdown("---")
 st.info("App optimized for mobile: caching data & model, responsive tables, and expandable sections.")
+
 
 
