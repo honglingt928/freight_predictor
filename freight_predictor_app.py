@@ -6,7 +6,13 @@ from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 
 # Load dataset
-data = pd.read_csv('synthetic_freight_rates.csv')
+# data = pd.read_csv('synthetic_freight_rates.csv')
+
+@st.cache_data
+def load_data():
+    return pd.read_csv("synthetic_freight_rates.csv")
+
+data = load_data()
 
 # Separate features and target
 X = data.drop('Rate_USD', axis=1)
@@ -63,3 +69,4 @@ st.success(f"${predicted_rate:,.2f}")
 st.subheader("Input Details")
 
 st.write(input_df)
+
