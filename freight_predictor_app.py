@@ -86,12 +86,13 @@ st.success(f"${predicted_rate:,.2f}")
 
 # -------- Input details in expandable section --------
 with st.expander("View Input Details"):
-    st.dataframe(input_df, use_container_width=True)
+    st.dataframe(input_df, width=True)
 
 # -------- Dataset preview in expandable section --------
 with st.expander("View Dataset"):
-    st.dataframe(data, use_container_width=True)
+    st.dataframe(data, width=True)
 
 st.markdown("---")
 st.info("App optimized for mobile: caching data & model, responsive tables, and expandable sections.")
+
 
