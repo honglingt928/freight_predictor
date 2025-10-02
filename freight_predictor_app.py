@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 
 # -------- Page config for mobile --------
-st.set_page_config(page_title="Smart Freight Rate Predictor", layout="centered")
+st.set_page_config(page_title="Smart Freight Rate Predictor - By Hong Ling", layout="centered")
 
 # -------- Load and cache dataset --------
 @st.cache_data
@@ -94,3 +94,4 @@ with st.expander("View Dataset"):
 
 st.markdown("---")
 st.info("App optimized for mobile: caching data & model, responsive tables, and expandable sections.")
+
