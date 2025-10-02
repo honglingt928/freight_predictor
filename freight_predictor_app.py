@@ -5,20 +5,34 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 
-# Load dataset
-# data = pd.read_csv('synthetic_freight_rates.csv')
+# -------- Page config for mobile --------
+st.set_page_config(page_title="Smart Freight Rate Predictor", layout="centered")
 
+# -------- Load and cache dataset --------
 @st.cache_data
 def load_data():
-    return pd.read_csv("synthetic_freight_rates.csv")
+    try:
+        return pd.read_csv("synthetic_freight_rates.csv")
+    except FileNotFoundError:
+        # fallback synthetic dataset if CSV not found
+        return pd.DataFrame({
+            "Origin": ["Shanghai", "Los Angeles", "Hamburg"],
+            "Destination": ["Los Angeles", "Shanghai", "Singapore"],
+            "Mode": ["Ocean", "Air", "Rail"],
+            "Distance_miles": [7000, 6000, 5000],
+            "Season": ["Winter", "Summer", "Spring"],
+            "Fuel_Index": [1.0, 0.95, 1.05],
+            "Carrier_Tier": ["A", "B", "C"],
+            "Rate_USD": [1200, 1100, 900]
+        })
 
 data = load_data()
 
-# Separate features and target
+# -------- Separate features and target --------
 X = data.drop('Rate_USD', axis=1)
 y = data['Rate_USD']
 
-# Preprocessor
+# -------- Preprocessor & Model pipeline --------
 categorical_cols = ['Origin', 'Destination', 'Mode', 'Season', 'Carrier_Tier']
 numerical_cols = ['Distance_miles', 'Fuel_Index']
 
@@ -27,18 +41,22 @@ preprocessor = ColumnTransformer(transformers=[
     ('cat', OneHotEncoder(), categorical_cols)
 ])
 
-# Model pipeline
-model = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('regressor', RandomForestRegressor(n_estimators=100, random_state=42))
-])
+@st.cache_data
+def train_model(X, y):
+    model = Pipeline(steps=[
+        ('preprocessor', preprocessor),
+        ('regressor', RandomForestRegressor(n_estimators=100, random_state=42))
+    ])
+    model.fit(X, y)
+    return model
 
-# Train model
-model.fit(X, y)
+model = train_model(X, y)
 
-# Streamlit UI
-st.title("🚚 Smart Freight Rate Predictor - By Hong Ling")
+# -------- Streamlit UI --------
+st.title("🚚 Smart Freight Rate Predictor")
+st.markdown("Predict freight rates based on shipment details.")
 
+# -------- Sidebar inputs --------
 st.sidebar.header("Input Freight Details")
 
 origin = st.sidebar.selectbox("Origin", data['Origin'].unique())
@@ -49,7 +67,7 @@ season = st.sidebar.selectbox("Season", data['Season'].unique())
 fuel_index = st.sidebar.slider("Fuel Index", 0.8, 1.3, 1.0, 0.01)
 carrier_tier = st.sidebar.selectbox("Carrier Tier", data['Carrier_Tier'].unique())
 
-# Prepare input for prediction
+# -------- Prepare input for prediction --------
 input_df = pd.DataFrame({
     'Origin': [origin],
     'Destination': [destination],
@@ -60,13 +78,19 @@ input_df = pd.DataFrame({
     'Carrier_Tier': [carrier_tier]
 })
 
-# Predict
+# -------- Predict --------
 predicted_rate = model.predict(input_df)[0]
 
 st.subheader("Predicted Freight Rate (USD)")
 st.success(f"${predicted_rate:,.2f}")
 
-st.subheader("Input Details")
+# -------- Input details in expandable section --------
+with st.expander("View Input Details"):
+    st.dataframe(input_df, use_container_width=True)
 
-st.write(input_df)
+# -------- Dataset preview in expandable section --------
+with st.expander("View Dataset"):
+    st.dataframe(data, use_container_width=True)
 
+st.markdown("---")
+st.info("App optimized for mobile: caching data & model, responsive tables, and expandable sections.")
