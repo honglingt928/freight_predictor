@@ -5,34 +5,14 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 
-# -------- Page config for mobile --------
-st.set_page_config(page_title="Smart Freight Rate Predictor - For Hong Ling PoC Only", layout="centered")
+# Load dataset
+data = pd.read_csv('synthetic_freight_rates.csv')
 
-# -------- Load and cache dataset --------
-@st.cache_data
-def load_data():
-    try:
-        return pd.read_csv("synthetic_freight_rates.csv")
-    except FileNotFoundError:
-        # fallback synthetic dataset if CSV not found
-        return pd.DataFrame({
-            "Origin": ["Shanghai", "Los Angeles", "Hamburg"],
-            "Destination": ["Los Angeles", "Shanghai", "Singapore"],
-            "Mode": ["Ocean", "Air", "Rail"],
-            "Distance_miles": [7000, 6000, 5000],
-            "Season": ["Winter", "Summer", "Spring"],
-            "Fuel_Index": [1.0, 0.95, 1.05],
-            "Carrier_Tier": ["A", "B", "C"],
-            "Rate_USD": [1200, 1100, 900]
-        })
-
-data = load_data()
-
-# -------- Separate features and target --------
+# Separate features and target
 X = data.drop('Rate_USD', axis=1)
 y = data['Rate_USD']
 
-# -------- Preprocessor & Model pipeline --------
+# Preprocessor
 categorical_cols = ['Origin', 'Destination', 'Mode', 'Season', 'Carrier_Tier']
 numerical_cols = ['Distance_miles', 'Fuel_Index']
 
@@ -41,22 +21,18 @@ preprocessor = ColumnTransformer(transformers=[
     ('cat', OneHotEncoder(), categorical_cols)
 ])
 
-@st.cache_data
-def train_model(X, y):
-    model = Pipeline(steps=[
-        ('preprocessor', preprocessor),
-        ('regressor', RandomForestRegressor(n_estimators=100, random_state=42))
-    ])
-    model.fit(X, y)
-    return model
+# Model pipeline
+model = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('regressor', RandomForestRegressor(n_estimators=100, random_state=42))
+])
 
-model = train_model(X, y)
+# Train model
+model.fit(X, y)
 
-# -------- Streamlit UI --------
-st.title("🚚 Smart Freight Rate Predictor - For Hong Ling PoC Only")
-st.markdown("Predict freight rates based on shipment details.")
+# Streamlit UI
+st.title("🚚 Smart Freight Rate Predictor - Hong Ling POC")
 
-# -------- Sidebar inputs --------
 st.sidebar.header("Input Freight Details")
 
 origin = st.sidebar.selectbox("Origin", data['Origin'].unique())
@@ -67,7 +43,7 @@ season = st.sidebar.selectbox("Season", data['Season'].unique())
 fuel_index = st.sidebar.slider("Fuel Index", 0.8, 1.3, 1.0, 0.01)
 carrier_tier = st.sidebar.selectbox("Carrier Tier", data['Carrier_Tier'].unique())
 
-# -------- Prepare input for prediction --------
+# Prepare input for prediction
 input_df = pd.DataFrame({
     'Origin': [origin],
     'Destination': [destination],
@@ -78,24 +54,81 @@ input_df = pd.DataFrame({
     'Carrier_Tier': [carrier_tier]
 })
 
-# -------- Predict --------
+# Predict rate
 predicted_rate = model.predict(input_df)[0]
 
-st.subheader("Predicted Freight Rate (USD)")
+st.subheader("💰 Predicted Freight Rate")
 st.success(f"${predicted_rate:,.2f}")
 
-# -------- Input details in expandable section --------
-with st.expander("View Input Details"):
-    st.dataframe(input_df, width=True)
+st.subheader("Input Details")
+st.write(input_df)
 
-# -------- Dataset preview in expandable section --------
-with st.expander("View Dataset"):
-    st.dataframe(data, width=True)
+# -------------------------------------------------
+# NEW FEATURE 1: Distance Efficiency Calculator
+# -------------------------------------------------
 
-st.markdown("---")
-st.info("App optimized for mobile: caching data & model, responsive tables, and expandable sections.")
+st.subheader("📏 Distance Efficiency Calculator")
 
+cost_per_mile = predicted_rate / distance
 
+col1, col2 = st.columns(2)
 
+with col1:
+    st.metric("Distance (Miles)", f"{distance:,}")
 
+with col2:
+    st.metric("Cost Per Mile", f"${cost_per_mile:.2f}")
 
+st.info(
+    "Cost per mile helps logistics teams compare efficiency across shipping lanes."
+)
+
+# -------------------------------------------------
+# NEW FEATURE 2: Season + Fuel Scenario Simulator
+# -------------------------------------------------
+
+st.subheader("🧠 Scenario Simulator: Season & Fuel Impact")
+
+sim_season = st.selectbox(
+    "Simulated Season",
+    data['Season'].unique(),
+    key="sim_season"
+)
+
+sim_fuel = st.slider(
+    "Simulated Fuel Index",
+    0.8,
+    1.5,
+    1.1,
+    0.01,
+    key="sim_fuel"
+)
+
+scenario_df = pd.DataFrame({
+    'Origin': [origin],
+    'Destination': [destination],
+    'Mode': [mode],
+    'Distance_miles': [distance],
+    'Season': [sim_season],
+    'Fuel_Index': [sim_fuel],
+    'Carrier_Tier': [carrier_tier]
+})
+
+scenario_rate = model.predict(scenario_df)[0]
+
+st.subheader("📊 Scenario Prediction")
+
+col3, col4 = st.columns(2)
+
+with col3:
+    st.metric("Current Prediction", f"${predicted_rate:,.2f}")
+
+with col4:
+    st.metric("Scenario Prediction", f"${scenario_rate:,.2f}")
+
+difference = scenario_rate - predicted_rate
+
+if difference > 0:
+    st.warning(f"Estimated rate increase: ${difference:,.2f}")
+else:
+    st.success(f"Estimated rate decrease: ${abs(difference):,.2f}")
