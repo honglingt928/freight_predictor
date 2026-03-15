@@ -86,7 +86,6 @@ st.info(
 # -------------------------------------------------
 # NEW FEATURE 2: Season + Fuel Scenario Simulator
 # -------------------------------------------------
-
 st.subheader("🧠 Scenario Simulator: Season & Fuel Impact")
 
 sim_season = st.selectbox(
@@ -104,6 +103,7 @@ sim_fuel = st.slider(
     key="sim_fuel"
 )
 
+# Scenario input
 scenario_df = pd.DataFrame({
     'Origin': [origin],
     'Destination': [destination],
@@ -114,7 +114,15 @@ scenario_df = pd.DataFrame({
     'Carrier_Tier': [carrier_tier]
 })
 
-scenario_rate = model.predict(scenario_df)[0]
+# Base ML prediction
+scenario_rate_ml = model.predict(scenario_df)[0]
+
+# Fuel adjustment logic
+fuel_change = sim_fuel - fuel_index
+fuel_adjustment = fuel_change * 0.15 * predicted_rate
+
+# Final scenario rate
+scenario_rate = scenario_rate_ml + fuel_adjustment
 
 st.subheader("📊 Scenario Prediction")
 
@@ -124,11 +132,21 @@ with col3:
     st.metric("Current Prediction", f"${predicted_rate:,.2f}")
 
 with col4:
-    st.metric("Scenario Prediction", f"${scenario_rate:,.2f}")
+    st.metric(
+        "Scenario Prediction",
+        f"${scenario_rate:,.2f}",
+        delta=f"{scenario_rate - predicted_rate:,.2f}"
+    )
 
 difference = scenario_rate - predicted_rate
 
+# Show impact message
 if difference > 0:
     st.warning(f"Estimated rate increase: ${difference:,.2f}")
-else:
+elif difference < 0:
     st.success(f"Estimated rate decrease: ${abs(difference):,.2f}")
+else:
+    st.info("No change in estimated rate")
+
+# Show fuel impact
+st.caption(f"Fuel adjustment applied: ${fuel_adjustment:,.2f}")
