@@ -103,7 +103,6 @@ sim_fuel = st.slider(
     key="sim_fuel"
 )
 
-# Scenario input
 scenario_df = pd.DataFrame({
     'Origin': [origin],
     'Destination': [destination],
@@ -114,15 +113,24 @@ scenario_df = pd.DataFrame({
     'Carrier_Tier': [carrier_tier]
 })
 
-# Base ML prediction
+# ML prediction for scenario
 scenario_rate_ml = model.predict(scenario_df)[0]
 
-# Fuel adjustment logic
+# Calculate fuel impact relative to original prediction
 fuel_change = sim_fuel - fuel_index
-fuel_adjustment = fuel_change * 0.15 * predicted_rate
 
-# Final scenario rate
-scenario_rate = scenario_rate_ml + fuel_adjustment
+# Stronger fuel impact factor
+if mode == "Air":
+    fuel_factor = 0.18
+elif mode == "Truck":
+    fuel_factor = 0.30
+else:
+    fuel_factor = 0.20
+
+fuel_adjustment = predicted_rate * fuel_factor * fuel_change
+
+# Final rate uses base prediction + adjustment
+scenario_rate = predicted_rate + fuel_adjustment
 
 st.subheader("📊 Scenario Prediction")
 
@@ -140,7 +148,6 @@ with col4:
 
 difference = scenario_rate - predicted_rate
 
-# Show impact message
 if difference > 0:
     st.warning(f"Estimated rate increase: ${difference:,.2f}")
 elif difference < 0:
@@ -148,5 +155,4 @@ elif difference < 0:
 else:
     st.info("No change in estimated rate")
 
-# Show fuel impact
 st.caption(f"Fuel adjustment applied: ${fuel_adjustment:,.2f}")
